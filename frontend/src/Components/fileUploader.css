@@ -1,0 +1,285 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,500;0,600;0,700;0,900;1,800&display=swap");
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+:root {
+  --mesh-shape-1: #fff95f;
+  --mesh-shape-2: #2cffe6;
+  --primary-color: #34b345;
+}
+.main-container {
+  position: relative;
+  overflow: hidden;
+  height: 200vh;
+}
+
+.Hero_container {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  font-family: "Montserrat", sans-serif;
+}
+/* Header  */
+.header {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 70vw;
+  margin: auto;
+  display: flex;
+  height: 88px;
+
+  align-items: center;
+  justify-content: space-between;
+  padding: 40px 40px;
+  margin: 0;
+}
+.header .logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+}
+
+.logo__img {
+  padding-top: 5px;
+  width: 40px;
+}
+.logo__img img {
+  width: 100%;
+  height: 100%;
+}
+.header .nav ul li {
+  list-style: none;
+}
+.header .nav ul li a {
+  font-weight: 400;
+  cursor: pointer;
+}
+.header .nav ul li a:hover {
+  color: var(--primary-color);
+  font-weight: bold;
+}
+.meshGradient {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  top: 0px;
+  right: 200px;
+  transform: rotate(-45deg);
+  z-index: -3;
+}
+
+.shape {
+  width: 450px;
+  height: 450px;
+  border-radius: 9999px;
+  opacity: 0.9;
+  filter: blur(140px);
+}
+
+.shape.shape-1 {
+  transform: translateY(150px);
+  background-color: var(--mesh-shape-1);
+}
+.shape.shape-2 {
+  background-color: var(--mesh-shape-2);
+}
+.glass {
+  position: absolute;
+  width: 100vw;
+  height: 100%;
+  margin: auto;
+  top: 0;
+  left: 0;
+  z-index: -2;
+  background: #eaeef0;
+  opacity: 0.3;
+}
+
+.hero_Section {
+  width: 70vw;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 3rem;
+  transform: translateX(30px);
+  align-items: center;
+}
+.hero-text {
+  text-align: left;
+}
+.hero-text h1 {
+  font-size: 60px;
+  color: #000;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 800;
+}
+.hero-text h1 span {
+  color: var(--primary-color);
+}
+
+.uploadImge-card {
+  padding: 5px 20px 20px 20px;
+  background-color: white;
+  border-radius: 10px;
+  position: relative;
+}
+.uploadImge-card::after {
+  position: absolute;
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: rgba(250, 250, 242, 0.856);
+  top: 25px;
+  left: 25px;
+  border-radius: 10px;
+  border: 2px dashed rgb(255, 255, 255);
+  z-index: -20;
+  opacity: 0.8;
+}
+
+.hero-imageUploader {
+  display: grid;
+  align-items: center;
+  justify-content: center;
+}
+
+.cardTitle {
+  text-align: left;
+  text-transform: capitalize;
+  color: rgb(63, 61, 73);
+  font-weight: bold;
+  z-index: 99;
+  text-transform: uppercase;
+}
+.uploadImge-card .dropzone {
+  border: 1px dashed rgb(214, 214, 214);
+  border-radius: 8px;
+  width: 512px;
+  height: 400px;
+  background-color: #f8f5f5;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  z-index: 99;
+}
+.dropzone p {
+  text-align: center;
+  font-style: normal;
+  font-size: 12px;
+  font-weight: bold;
+  padding: 2rem;
+  color: rgba(29, 29, 29, 0.774);
+}
+.dropzone p span {
+  color: #405cf5;
+  font-weight: bold;
+}
+.UploadBtn {
+  appearance: button;
+  backface-visibility: hidden;
+  background-color: white;
+  border-radius: 6px;
+  border-width: 0;
+  box-sizing: border-box;
+  color: rgb(0, 0, 0);
+  cursor: pointer;
+  box-shadow: 0px 16px 32px rgba(40, 50, 50, 0.1);
+  border: 1px dashed gray;
+  font-size: 100%;
+  height: 54px;
+  line-height: 1.15;
+  margin: 12px 0 0;
+  outline: none;
+  overflow: hidden;
+  padding: 0 25px;
+  position: relative;
+  text-align: center;
+  text-transform: none;
+  transform: translateZ(0);
+  transition: all 0.4s, box-shadow 0.08s ease-in;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  width: 100%;
+}
+
+.UploadBtn:disabled {
+  cursor: default;
+}
+.UploadBtn:hover {
+  background-color: var(--primary-color);
+  box-shadow: 0px 8px 16px rgba(40, 50, 50, 0.1);
+  color: white;
+}
+.UploadBtn:focus {
+  box-shadow: rgba(50, 50, 93, 0.1) 0 0 0 1px inset,
+    rgba(50, 50, 93, 0.2) 0 6px 15px 0, rgba(0, 0, 0, 0.1) 0 2px 2px 0,
+    rgba(50, 151, 211, 0.3) 0 0 0 4px;
+}
+.detector-container {
+  position: relative;
+}
+.detection-section {
+  width: 70vw;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 1fr 300px 1fr;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 50px;
+  height: 0;
+}
+.previewImage-card {
+  padding: 20px 20px 20px 20px;
+  box-shadow: 0px 4px 9px rgba(44, 44, 51, 0.1);
+  border-radius: 14px;
+  margin: 0px 32px;
+  text-align: left;
+  grid-column: span 2;
+}
+
+.thumb {
+  padding: 20px;
+  border: 1px dotted gray;
+}
+.thumbInner {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: white;
+  padding: 0 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+}
+.preview {
+  transform: translateY(-160px);
+}
+
+.thumbInner .imgCont {
+  border-radius: 10px;
+  width: 450px;
+  height: 450px;
+  overflow: hidden;
+  border: 1px solid silver;
+}
+.thumbInner .imgCont .img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.mesh-left {
+  top: 140px;
+  left: 200px;
+  transform: rotate(45deg);
+}
